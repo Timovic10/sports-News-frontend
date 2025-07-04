@@ -2,7 +2,6 @@ import { FiMenu } from "react-icons/fi";
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
-import ThemeToggle from "../components/ThemeToggle";
 import { Link } from "react-router-dom";
 import { PiHandbag } from "react-icons/pi";
 const MainLayout = () => {
@@ -29,8 +28,7 @@ const MainLayout = () => {
           </Link>
 
           <span className="flex items-center gap-2">
-            <PiHandbag className="hidden" size={20} />
-            <ThemeToggle />
+            <p>&nbsp;</p>
           </span>
         </div>
 

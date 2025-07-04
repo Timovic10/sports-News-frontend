@@ -1,7 +1,4 @@
 import { Link } from "react-router-dom";
-import { RiInstagramFill } from "react-icons/ri";
-import { AiFillTikTok } from "react-icons/ai";
-import { IoSearchOutline } from "react-icons/io5";
 
 const Sidebar = ({ isOpen, onClose }) => {
   return (
@@ -21,12 +18,12 @@ const Sidebar = ({ isOpen, onClose }) => {
       >
         <Link to="/" className="ml-5 flex justify-center mt-20">
           <img
-            src="/src/assets/spImg.jpg"
-            className="hidden dark:block w-14 h-14 rounded-full"
+            src="/src/assets/bl.png"
+            className="hidden dark:block w-28 rounded-full"
           />
           <img
-            src="/src/assets/spImg.jpg"
-            className="block dark:hidden w-14 h-14 rounded-full"
+            src="/src/assets/bl.png"
+            className="block dark:hidden w-28 rounded-full"
           />
         </Link>
 
