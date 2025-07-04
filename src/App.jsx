@@ -1,49 +1,64 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import Navbar from "./components/navbar";
-import Footer from "./components/footer";
-import PrivateRoute from "./components/PrivateRoute";
-import { AuthProvider } from "./hooks/useAuth";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Suspense, lazy, useEffect } from "react";
+import MainLayout from "./layouts/MainLayout";
+import ProtectedRoute from "./components/protectedRoute";
+import useAuthStore from "./stores/useAuthStore";
 
-import Home from "./pages/Home";
-import Categories from "./pages/Categories";
-import AdminLogin from "./pages/AdminLogin";
-import AdminDashboard from "./pages/AdminDashboard";
-import AddArticle from "./pages/AddArticle";
-import ArticleDetail from './pages/ArticleDetail';
+const Login = lazy(() => import("./page/login"));
+const Home = lazy(() => import("./page/home"));
+const ShopDetails = lazy(() => import("./page/articleDetails"));
+const Article = lazy(() => import("./page/articles"));
+
+// Admin Dashboard
+const Dashboard = lazy(() => import("./page/dashboard"));
+const ArticleDahboard = lazy(() => import("./page/articleDahboard"));
+const Settings = lazy(() => import("./page/settings"));
 
 function App() {
+  // const fetchAdmin = useAuthStore((state) => state.fetchAdmin);
+  // const token = useAuthStore((state) => state.token);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      useAuthStore.setState({ token });
+    }
+    useAuthStore.getState().fetchAdmin();
+  }, []);
+
   return (
-    <AuthProvider>
-      <Router>
-        <Navbar />
-        <main className="p-4">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/categories" element={<Categories />} />
-            <Route path="/admin/login" element={<AdminLogin />} />
-            <Route path="/admin" element={<Navigate to="/admin/login" replace />} />
-            <Route path="/article/:id" element={<ArticleDetail />} />
-            <Route
-              path="/admin/dashboard"
-              element={
-                <PrivateRoute>
-                  <AdminDashboard />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/admin/create"
-              element={
-                <PrivateRoute>
-                  <AddArticle />
-                </PrivateRoute>
-              }
-            />
-          </Routes>
-        </main>
-        <Footer />
-      </Router>
-    </AuthProvider>
+    <BrowserRouter>
+      <Suspense
+        fallback={
+          <div className="text-center mt-20 text-black dark:text-white">
+            Loading...
+          </div>
+        }
+      >
+        <Routes>
+          {/* Default redirect to /home */}
+          <Route path="/" element={<Navigate to="/home" replace />} />
+          <Route path="login" element={<Login />} />
+          <Route path="home" element={<Home />} />
+          <Route path="articles" element={<Article />} />
+          <Route path="/article/:slug" element={<ShopDetails />} />
+          {/* Protected Admin Routes */}
+
+          {/* ✅ Protected Routes */}
+          <Route
+            element={
+              <ProtectedRoute>
+                <MainLayout />
+              </ProtectedRoute>
+            }
+          >
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/articleDahboard" element={<ArticleDahboard />} />
+            <Route path="/settings" element={<Settings />} />
+          </Route>
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
   );
 }
 
