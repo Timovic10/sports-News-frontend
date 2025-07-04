@@ -1,9 +1,8 @@
 import { FaUserCog } from "react-icons/fa";
 import { LuLogOut } from "react-icons/lu";
-// import { FaTrashCan } from "react-icons/fa6";
-import { useState, useEffect } from "react";
-import useAuthStore from "../stores/useAuthStore";
-import useArticleStore from "../stores/articleStore";
+import { useEffect } from "react";
+import useAuthStore from "../stores/useAuthStore.js";
+import useArticleStore from "../stores/articleStore.js";
 import { FaCartShopping } from "react-icons/fa6";
 import {
   LineChart,

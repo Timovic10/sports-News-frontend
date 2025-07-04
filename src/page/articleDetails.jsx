@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { FaFacebook, FaTwitter, FaLink } from "react-icons/fa";
 import { useMoveBack } from "../hooks/useMoveBack";
-import { ARTICLE_URL } from "../constants";
+import { ARTICLE_URL } from "../constants.js";
 import axios from "axios";
 
 const ArticleDetail = () => {

@@ -2,7 +2,7 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import React, { useEffect, useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
-import useArticleStore from "../stores/articleStore";
+import useArticleStore from "../stores/articleStore.js";
 
 export default function ArticlesPage() {
   const { articles, fetchArticles, loading, error, hasMore } =

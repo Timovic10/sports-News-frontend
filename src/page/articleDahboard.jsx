@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import useArticleStore from "../stores/articleStore";
+import useArticleStore from "../stores/articleStore.js";
 import { FaTrash, FaPlus } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import { ARTICLE_URL } from "../constants";
+import { ARTICLE_URL } from "../constants.js";
 
 function ArticleDashboard() {
   const { articles, fetchArticles, resetArticles } = useArticleStore();

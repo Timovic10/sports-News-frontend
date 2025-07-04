@@ -8,8 +8,8 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-import useArticleStore from "../stores/articleStore";
-import useAuthStore from "../stores/useAuthStore";
+import useArticleStore from "../stores/articleStore.js";
+import useAuthStore from "../stores/useAuthStore.js";
 
 function AdminDashboard() {
   const { articles, fetchArticles } = useArticleStore();

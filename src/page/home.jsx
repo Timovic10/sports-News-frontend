@@ -3,8 +3,8 @@ import Header from "../components/header";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { ARTICLE_URL } from "../constants";
-import useInfiniteArticleStore from "../stores/infiniteArticleStore";
+import { ARTICLE_URL } from "../constants.js";
+import useInfiniteArticleStore from "../stores/infiniteArticleStore.js";
 function Shop() {
   const {
     articles,
