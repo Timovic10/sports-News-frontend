@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import { Link } from "react-router-dom";
-import { PiHandbag } from "react-icons/pi";
 const MainLayout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
