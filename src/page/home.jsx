@@ -5,6 +5,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { ARTICLE_URL } from "../constants.js";
 import useInfiniteArticleStore from "../stores/InfiniteArticleStore.js";
+import BgImg from "../assets/bgimg.jpg";
 function Shop() {
   const {
     articles,
@@ -70,7 +71,7 @@ function Shop() {
           {/* Hero Image */}
           <div className="relative h-[350px] md:h-[450px] rounded-xl overflow-hidden shadow-lg">
             <img
-              src="src/assets/bgImg.jpg"
+              src={BgImg}
               alt="Sports Hero"
               className="w-full h-full object-cover"
             />
