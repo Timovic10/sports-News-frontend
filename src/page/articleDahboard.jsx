@@ -118,7 +118,10 @@ function ArticleDashboard() {
 
       {/* Modal */}
       <dialog open={showModal} className="modal modal-open">
-        <div className="modal-box bg-white dark:bg-gray-800">
+        <div
+          style={{ width: "28rem" }}
+          className="modal-box  bg-white w-96 p-3 rounded-md dark:bg-gray-800"
+        >
           <form
             onSubmit={handleSubmit}
             className="space-y-4"
