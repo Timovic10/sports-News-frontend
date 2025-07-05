@@ -39,13 +39,10 @@ export default function Header() {
       {/* Mobile Menu */}
       {open && (
         <div className="md:hidden bg-gray-800 px-4 py-4 space-y-3">
-          <a href="#" className="block hover:text-blue-300">
+          <a href="/home" className="block hover:text-blue-300">
             Home
           </a>
-          <a href="#" className="block hover:text-blue-300">
-            Categories
-          </a>
-          <a href="#" className="block hover:text-blue-300">
+          <a href="/articles" className="block hover:text-blue-300">
             Articles
           </a>
           <button className="w-full mt-2  bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md text-sm">
