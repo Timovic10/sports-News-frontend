@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import { Link } from "react-router-dom";
+import BlImg from "../assets/bl.png";
 const MainLayout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -22,8 +23,8 @@ const MainLayout = () => {
           </button>
 
           <Link to="/" className="w-28 lg:hidden">
-            <img src="/src/assets/bl.png" className="hidden dark:block " />
-            <img src="/src/assets/bl.png" className="block dark:hidden" />
+            <img src={BlImg} className="hidden dark:block " />
+            <img src={BlImg} className="block dark:hidden" />
           </Link>
 
           <span className="flex items-center gap-2">

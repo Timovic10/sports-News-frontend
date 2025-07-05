@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import BlImg from "../assets/bl.png"; // Adjust the path as necessary
 const Sidebar = ({ isOpen, onClose }) => {
   return (
     <>
@@ -17,14 +17,8 @@ const Sidebar = ({ isOpen, onClose }) => {
           bg-[#f0f0f0] dark:bg-[#1A1A1D]`}
       >
         <Link to="/" className="ml-5 flex justify-center mt-20">
-          <img
-            src="/src/assets/bl.png"
-            className="hidden dark:block w-28 rounded-full"
-          />
-          <img
-            src="/src/assets/bl.png"
-            className="block dark:hidden w-28 rounded-full"
-          />
+          <img src={BlImg} className="hidden dark:block w-28 rounded-full" />
+          <img src={BlImg} className="block dark:hidden w-28 rounded-full" />
         </Link>
 
         <div className="flex flex-col gap-5 text-black dark:text-white p-4 space-y-3  overflow-y-scroll">

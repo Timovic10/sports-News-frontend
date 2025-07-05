@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { ARTICLE_URL } from "../constants.js";
 import useInfiniteArticleStore from "../stores/InfiniteArticleStore.js";
 import BgImg from "../assets/bgimg.jpg";
+import CatImg from "../assets/Category.png";
 function Shop() {
   const {
     articles,
@@ -83,7 +84,7 @@ function Shop() {
       </section>
 
       <section className="py-8 px-4 flex justify-center">
-        <img src="src/assets/category.png" alt="" />
+        <img src={CatImg} alt="" />
       </section>
 
       <section className="py-8 px-4 md:px-8">
