@@ -21,7 +21,9 @@ function Login() {
       onSubmit={handleSubmit}
       className="flex h-full flex-col gap-7 items-center justify-center"
     >
-      <h1 className="text-2xl font-bold dark:text-white">Login</h1>
+      <h1 className="text-2xl font-bold text-blue-400 dark:text-white">
+        Login
+      </h1>
 
       <input
         className="w-80 rounded-md p-2 bg-transparent border border-gray-300 dark:border-gray-100 outline-none"
@@ -43,7 +45,7 @@ function Login() {
 
       <button
         type="submit"
-        className="mt-4 flex gap-2 items-center bg-black text-white py-2 px-6 rounded hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="mt-4 flex gap-2 items-center bg-blue-400 text-white py-2 px-6 rounded hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed"
         disabled={loading}
       >
         {loading ? "Logging in..." : "Log in"}
